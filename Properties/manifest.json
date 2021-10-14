@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "version": "1.0.0",
+  "id": "1f1079a0-d76f-4e13-a5b7-ae39ac4b58fb",
+  "packageName": "com.company.example",
+  "developer": {
+    "name": "Microsoft",
+    "websiteUrl": "https://localhost:44357",
+    "privacyUrl": "https://localhost:44357/privacy",
+    "termsOfUseUrl": "https://localhost:44357/termsofuse"
+  },
+  "icons": {
+    "color": "../color.png",
+    "outline": "../outline.png"
+  },
+  "name": {
+    "short": "VocalScreen Prototype",
+    "full": "VocalScreen Prototype"
+  },
+  "description": {
+    "short": "Short description for VocalScreen Prototype.",
+    "full": "Full description of VocalScreen Prototype."
+  },
+  "webApplicationInfo": {
+    "id": "b3ef2d9d-a8f4-42b1-92a0-7ffea11d066b",
+    "resource": "api://localhost/b3ef2d9d-a8f4-42b1-92a0-7ffea11d066b"
+  },
+  "accentColor": "#FFFFFF",
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "localhost"
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://localhost:44357/config",
+      "canUpdateConfiguration": true,
+      "scopes": [
+        "team",
+        "groupchat"
+      ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "index",
+      "name": "Personal Tab",
+      "contentUrl": "https://localhost:44357/tab",
+      "websiteUrl": "https://localhost:44357/tab",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ]
+}
