@@ -7,31 +7,34 @@
 
 <div class="welcome page">
 	<div class="narrow page-padding">
-		<img src="hello.png" />
+		<!--
 		<h1 class="center">
-			Congratulations@(!String.IsNullOrEmpty(UserName) ? ", " + UserName : "")!
-		</h1>
-
+			Create Accessible Screen Sharing Session
+			Welcome(!String.IsNullOrEmpty(UserName) ? ", " + UserName : "")!
+		</h1> -->
+		
 		<div class="sections">
 		@if(!IsLoading)
 		{
-			<h2>Get the user's profile photo</h2>
-			<p>
-				Click below to authorize this app to read your profile photo using
-				Microsoft Graph.
-			</p>
-			<FluentButton Appearance="Appearance.Accent" @onclick="GetUserProfilePhoto">Authorize</FluentButton>
+			<p>Create Accessible Screen Sharing Session</p>
+			//<p>
+			//	Click below to generate a Presenter link, and open VocalScreen Windows Client App behind the scenes.
+			//</p>
+			//<FluentButton Appearance="Appearance.Accent" @onclick="Get">Get VocalScreen</FluentButton>
+			<NavLinkFluentAnchor Href="https://microsoft.com" Appearance="Appearance.Accent" target="_blank">Microsoft.com</NavLinkFluentAnchor>
+			<NavLinkFluentAnchor Href="ms-calculator://" Appearance="Appearance.Accent">Launch Calculator</NavLinkFluentAnchor>
 
-			@if(!String.IsNullOrEmpty(UserPhotoUri))
+			@if(!String.IsNullOrEmpty(Uri))
 			{
-				<div class="profile">
-					<img class="avatar" src="@UserPhotoUri"/>
+				<!-- <div class="profile"> -->
+					<!-- <img class="avatar" src="@Uri"/> -->
+
 					<div class="info">
 						<h3>@UserName</h3>
 						<p>@Title</p>
-						<p>@Email</p>
 					</div>
-				</div>		
+
+				<!-- </div> -->
 			}
 		}
 		else if(IsLoading)
@@ -50,9 +53,8 @@
 	string _clientId, _endpoint;
 
 	public string UserName { get; set; }
-	public string Email { get; set; }
 	public string Title { get; set; }
-	public string UserPhotoUri { get; set; }
+	public string Uri { get; set; }
 	public bool IsLoading { get; set; }
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -77,34 +79,35 @@
 		catch (Exception) { }	
 	}
 
-	private async Task GetUserProfilePhoto()
+	/*
+	private async Task Get()
 	{
 		try
 		{
 			IsLoading = true;
-
-			var graphClient = teamsfx.GetGraphServiceClient();
-			var photoStream = await graphClient.Me.Photo.Content.Request().GetAsync();
-			var profile = await graphClient.Me.Request().GetAsync();
-
-			if(photoStream != null)
-			{
-				// Copy the photo stream to a memory stream
-				// to get the bytes out of it
-				var memoryStream = new MemoryStream();
-				photoStream.CopyTo(memoryStream);
-				var photoBytes = memoryStream.ToArray();
+			
+			//var graphClient = teamsfx.GetGraphServiceClient();
+			//var photoStream = await graphClient.Me.Photo.Content.Request().GetAsync();
+			//var profile = await graphClient.Me.Request().GetAsync();
+			
+			//if(photoStream != null)
+			//{
+				// Copy the photo stream to a memory stream to get the bytes out of it
+				//var memoryStream = new MemoryStream();
+				//photoStream.CopyTo(memoryStream);
+				//var photoBytes = memoryStream.ToArray();
 
 				// Generate a data URI for the photo
-				UserPhotoUri = $"data:image/png;base64,{Convert.ToBase64String(photoBytes)}";
-			}
+				//Uri = $"data:image/png;base64,{Convert.ToBase64String(photoBytes)}";
+			//}
+			
+			//Title = profile.JobTitle;
 
-			Title = profile.JobTitle;
-			Email = profile.Mail;			
 		}
 		finally
 		{
 			IsLoading = false;
 		}		
 	}
+	*/
 }

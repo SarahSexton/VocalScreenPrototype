@@ -7,7 +7,7 @@
 microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
     const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
     microsoftTeams.settings.setSettings({
-        "suggestedDisplayName": "My Tab",
+        "suggestedDisplayName": "VocalScreen Tab",
         "entityId": "Test",
         "contentUrl": baseUrl + "/tab",
         "websiteUrl": baseUrl + "/tab"
@@ -17,7 +17,7 @@ microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
 /**
 * After verifying that the settings for your tab are correctly
 * filled in by the user you need to set the state of the dialog
-* to be valid.  This will enable the save button in the configuration
+* to be valid. This will enable the save button in the configuration
 * dialog.
 */
 microsoftTeams.settings.setValidityState(true);

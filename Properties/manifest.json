@@ -15,12 +15,12 @@
     "outline": "../outline.png"
   },
   "name": {
-    "short": "VocalScreen Prototype",
-    "full": "VocalScreen Prototype"
+    "short": "VocalScreen",
+    "full": "VocalScreen"
   },
   "description": {
-    "short": "Short description for VocalScreen Prototype.",
-    "full": "Full description of VocalScreen Prototype."
+    "short": "Enables shared screens to be narrated at the placement of the presenter's mouse.",
+    "full": "VocalScreen enables shared screens to be narrated for visually impaired listeners at the placement of the presenter's mouse."
   },
   "webApplicationInfo": {
     "id": "b3ef2d9d-a8f4-42b1-92a0-7ffea11d066b",
